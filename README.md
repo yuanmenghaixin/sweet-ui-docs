@@ -32,7 +32,7 @@ Sweet UI 命令行工具，可用来快速搭建和配置前端工程
 - 基础
     - [安装和启动](loader/start.md)
     - [开发规范](loader/norms.md)
-    - 目录结构
+    - [目录结构](loader/directory.md)
 - 架构
     - 架构总览
     - 入口文件
