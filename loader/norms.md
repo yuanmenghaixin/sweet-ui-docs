@@ -40,9 +40,13 @@ sudo npm i eslint -g
 ```
 
 **2. VSCode**
+
 a. 搜索 `ESLint` 扩展，并安装
+
 b. 左下角齿轮点开，进入`设置`界面
+
 c. 在右侧，添加以下配置
+
 ```
 "eslint.validate": [
     "javascript",
