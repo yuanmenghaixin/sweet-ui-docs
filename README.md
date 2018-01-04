@@ -6,18 +6,22 @@ Sweet UI 2.0 版本开始，结合前端模块化，工程化开发的思想，�
 **1. Sweet Loader**
 
 Sweet UI 前端开发工程脚手架
+[仓库地址：https://github.com/sweetui/sweet-loader](https://github.com/sweetui/sweet-loader)
 
 **2. Sweet Core**
 
 Sweet UI 框架核心功能，框架运作的核心代码，并包提供丰富的框架工具
+[仓库地址：https://github.com/sweetui/sweet](https://github.com/sweetui/sweet)
 
 **3. Sweet Style**
 
 Sweet 默认样式，符合Sweet UI 视觉规范的默认样式
+[仓库地址：https://github.com/sweetui/sweet-style](https://github.com/sweetui/sweet-style)
 
 **4. Sweet Cli （设计中）**
 
 Sweet UI 命令行工具，可用来快速搭建和配置前端工程
+[仓库地址：https://github.com/sweetui/sweet-cli](https://github.com/sweetui/sweet-cli)
 
 ## Sweet UI Loader
 
