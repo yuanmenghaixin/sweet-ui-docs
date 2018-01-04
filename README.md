@@ -3,19 +3,19 @@
 ## 介绍
 Sweet UI 2.0 版本开始，结合前端模块化，工程化开发的思想，对框架结构进行了划分，主要划分为以下几个模块
 
-1. Sweet Loader
+**1. Sweet Loader**
 
-Sweet UI 前端工程脚手架
+Sweet UI 前端开发工程脚手架
 
-2. Sweet Core
+**2. Sweet Core**
 
 Sweet UI 框架核心功能，框架运作的核心代码，并包提供丰富的框架工具
 
-3. Sweet Style
+**3. Sweet Style**
 
 Sweet 默认样式，符合Sweet UI 视觉规范的默认样式
 
-4. Sweet Cli （设计中）
+**4. Sweet Cli （设计中）**
 
 Sweet UI 命令行工具，可用来快速搭建和配置前端工程
 
