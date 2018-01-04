@@ -46,7 +46,7 @@ Sweet UI 命令行工具，可用来快速搭建和配置前端工程
 
 - VUEX
 - 国际化
-- Axios
+- [Axios(AJAX)](sweet-core/axios.md)
 
 ## Sweet Style
 
