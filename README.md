@@ -10,7 +10,7 @@ Sweet UI 前端开发工程脚手架
 
 **2. Sweet Core**
 
-Sweet UI 框架核心功能，框架运作的核心代码，并包提供丰富的框架工具
+Sweet UI 框架核心功能，框架运作的核心代码，并提供丰富的框架工具
 [仓库地址：https://github.com/sweetui/sweet](https://github.com/sweetui/sweet)
 
 **3. Sweet Style**
