@@ -98,11 +98,23 @@ let baseURL = globalVar.baseURL;
 
 在 `package.json` 中的 `scripts` 命令中添加
 
+**配置**
 ```
+// 示例
 "build": "gulp build --env production",
 "build-test": "gulp build --env production-test",
 "build-pre": "gulp build --env production-pre"
 ```
 
+**执行命令**
+```
+// 示例
+npm run build
+npm run build-test
+npm run build-pre
+```
+
 > --env 后面的命令名称 需和配置的属性一致
+
+
 
