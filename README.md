@@ -34,27 +34,26 @@ Sweet UI 命令行工具，可用来快速搭建和配置前端工程
     - [开发规范](loader/norms.md)
     - [目录结构](loader/directory.md)
 - 架构
-    - 架构总览
-    - 入口文件
+    - [架构总览](loader/framework.md)
+    - [入口文件](loader/entry.md)
     - 模块设计
     - 模块加载
-    - 样式加载
 - 配置
     - [环境配置](loader/env.md)
     - [反向代理设置](loader/proxy.md)
 - 路由
 - 部署
-    - 生产部署
+    - [生产部署](loader/release.md)
 
 ## Sweet Core
 
-- VUEX
-- 国际化
-- [Axios(AJAX)](sweet-core/axios.md)
+- [VUEX](sweet-core/vuex.md)
+- [国际化](sweet-core/i18n.md)
+- [Axios(AJAX)](sweet-core/SWXHR全局ajax使用文档.md)
 
 ## Sweet Style
 
-- 变量配置
-- 主题样式
-- 弹性盒子模型
+- [变量配置](sweet-style/vars.md)
+- [主题样式](sweet-style/theme.md)
+- [弹性盒子模型](sweet-style/flex-box.md)
 
