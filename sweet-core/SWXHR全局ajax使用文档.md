@@ -1,11 +1,11 @@
 # SWXHR 2.x全局AJAX使用和配置
 
 > 基于成熟的xhr组件[Axios][1],二次封装成适配Vue的sweet 2.x版本xhr全局组件。
-> 当前版本： v 2.0.1 (2017-12-8)
+> 当前版本： v 2.1.16 (2018-06-14)
 
 ## 在Vue中注册
 
-```
+```JavaScript
 const SWXHR_OPTIONS = {
     config: {
         // 配置全局接口前缀
@@ -25,8 +25,8 @@ const SWXHR_OPTIONS = {
         },
         // 配置全局SWXHR拦截器 -- > 请求后
         response(res) {
-        		// res 响应结构
-        		// res = {
+			// res 响应结构
+			// res = {
 				//   // 由服务器提供的响应
 				//   data: {},
 				//   // 来自服务器响应的 HTTP 状态码
@@ -68,72 +68,92 @@ export default {
 </script>
 ```
 
-## 执行 `GET` 请求
+### GET
 
-```
-// 为给定 ID 的 user 创建请求
-SWXHR.GET('/user?ID=12345')
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-
-// 可选地，上面的请求可以这样做
-SWXHR.GET('/user', {
+```javascript
+// 在组件内或者vuex 内使用
+this.SWXHR.GET(url,{
+	// 这里配置选项
+	headers: {'X-Requested-With': 'XMLHttpRequest'},
+    // 将要请求的参数包在 params 对象中
     params: {
-      ID: 12345
+        userName: 'name1',
+        id: '1'
     }
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+})
+.then(res => {
+    // res是收到的数据
+    console.log(res);
+})
 ```
 
-## 执行 `POST` 请求
+### POST
 
-```
-SWXHR.POST('/user', {
-    firstName: 'Fred',
-    lastName: 'Flintstone'
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-```
-## 执行 `DELETE` 请求
-
-```
-SWXHR.DELETE('/user', {
-    id: 'id'
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+```javascript
+// 在组件内或者vuex 内使用
+this.SWXHR.POST(url,{
+    // 和GET不一样，这里参数 不需要 包在 params 对象里面
+    userName: 'name1',
+    id: '1'
+}, {
+	// 这里配置选项
+  	headers: {'X-Requested-With': 'XMLHttpRequest'},
+})
+.then(res => {
+    // res是收到的数据
+    console.log(res);
+})
 ```
 
-## 执行 `PUT` 请求
+### PUT
 
+```javascript
+// 在组件内或者vuex 内使用
+this.SWXHR.PUT(url,{
+    userName: 'name1',
+    id: '1'
+}, {
+	// 这里配置选项
+  	headers: {'X-Requested-With': 'XMLHttpRequest'},
+})
+.then(res => {
+    // res是收到的数据
+    console.log(res);
+})
 ```
-SWXHR.PUT('/user', {
-    id: 'id'
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+
+
+### DELETE
+
+```javascript
+// 在组件内或者vuex 内使用
+this.SWXHR.DELETE(url, {
+	// 这里配置选项
+  	headers: {'X-Requested-With': 'XMLHttpRequest'},
+	params: {
+    id: '11'
+  }
+})
+.then(res => {
+    // res是收到的数据
+    console.log(res);
+})
+```
+
+
+## 使用 application/x-www-form-urlencoded 格式化
+
+默认情况下，axios 串联 js 对象为 JSON 格式。为了发送 application/x-wwww-form-urlencoded 格式数据，你可以使用一下的设置。
+
+使用 `qs` 库
+
+```javascript
+var qs = require('qs');
+this.SWXHR.POST(url, qs.stringify({'bar':123}))
+.then(res => {
+    // res是收到的数据
+    console.log(res);
+})
 ```
  
 [1]:https://www.kancloud.cn/yunye/axios/234845 "Axios"
