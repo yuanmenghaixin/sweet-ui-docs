@@ -1,6 +1,7 @@
 # AXIOS
 
 > Sweet UI 2.0 版本开始 AJAX 全部采用 axios
+> `@sweetui/sweet@2.1.16`
 
 ## 特色
 
@@ -22,11 +23,44 @@
 
 ### 全局配置
 
+```javascript
+var SWXHR_OPTIONS = {
+    config: {
+        // 配置全局接口前缀
+        baseURL: '',
+        // 配置全局接口延迟
+        timeout: 0,
+        // 配置全局接口请求头 ...其他更多配置项可以参考axios文档
+        headers: {}
+    },
+    intercept: {
+        // 配置全局SWXHR拦截器 -- > 请求前
+        request(p) {
+            // console.log('请求前');
+            return p;
+        },
+        // 配置全局SWXHR拦截器 -- > 请求后
+        response(res) {
+            var result = res.data;
+
+            if (res.status === 200 && result.code !== 'success') {
+                Vue.prototype.$message(result.message);
+            }
+
+            return result;
+        }
+    }
+};
+new SWXHR(SWXHR_OPTIONS);
+```
+
 ### GET
 
-```
+```javascript
 // 在组件内或者vuex 内使用
 this.SWXHR.GET(url,{
+	// 这里配置选项
+	headers: {'X-Requested-With': 'XMLHttpRequest'},
     // 将要请求的参数包在 params 对象中
     params: {
         userName: 'name1',
@@ -41,12 +75,15 @@ this.SWXHR.GET(url,{
 
 ### POST
 
-```
+```javascript
 // 在组件内或者vuex 内使用
 this.SWXHR.POST(url,{
     // 和GET不一样，这里参数 不需要 包在 params 对象里面
     userName: 'name1',
     id: '1'
+}, {
+	// 这里配置选项
+  	headers: {'X-Requested-With': 'XMLHttpRequest'},
 })
 .then(res => {
     // res是收到的数据
@@ -56,11 +93,14 @@ this.SWXHR.POST(url,{
 
 ### PUT
 
-```
+```javascript
 // 在组件内或者vuex 内使用
 this.SWXHR.PUT(url,{
     userName: 'name1',
     id: '1'
+}, {
+	// 这里配置选项
+  	headers: {'X-Requested-With': 'XMLHttpRequest'},
 })
 .then(res => {
     // res是收到的数据
@@ -71,11 +111,15 @@ this.SWXHR.PUT(url,{
 
 ### DELETE
 
-```
+```javascript
 // 在组件内或者vuex 内使用
-this.SWXHR.DELETE(url, params: {
+this.SWXHR.DELETE(url, {
+	// 这里配置选项
+  	headers: {'X-Requested-With': 'XMLHttpRequest'},
+	params: {
     id: '11'
-  })
+  }
+})
 .then(res => {
     // res是收到的数据
     console.log(res);
@@ -89,7 +133,7 @@ this.SWXHR.DELETE(url, params: {
 
 使用 `qs` 库
 
-```
+```javascript
 var qs = require('qs');
 this.SWXHR.POST(url, qs.stringify({'bar':123}))
 .then(res => {
@@ -97,3 +141,5 @@ this.SWXHR.POST(url, qs.stringify({'bar':123}))
     console.log(res);
 })
 ```
+
+
